@@ -8,4 +8,4 @@ aTextfield:addLine("This is the first line.")
 aTextfield:addLine("This is the second line.")
 aTextfield:addLine("This is the third line.")
 
-basalt.autoUpdate() -- self explanitary if not read the docs
+basalt.autoUpdate()

@@ -6,4 +6,5 @@ local test = basalt.createFrame("test")
 	:setForeground(colors.green)
 	
 basalt.debug("test window use for custom themes and window decor")
-basalt.autoUpdate() -- self explanitary if not read the docs
+
+basalt.autoUpdate()

@@ -5,4 +5,4 @@ local mgrtab = basalt.createFrame()
 	:setBackground(colors.white)
 	:setForeground(colors.green)
 	
-basalt.autoUpdate() -- self explanitary if not read the docs
+basalt.autoUpdate()
