@@ -19,6 +19,38 @@ appmgr:addLabel()
 	:setBackground(colors.blue)
 	
 		 
+	 local titlebar = appmgr:addPane() -- The bar to hold the text and buttons
+	:setSize(50, 1)
+	:setBackground(colors.black)
+local titletext = appmgr:addLabel()
+	:setText("App Launcher")
+	:setFontSize(1)
+	:setForeground(colors.white)
+	
+	
+local exit = appmgr:addButton() -- Full Screen button
+    :setText("[]")
+    :setHorizontalAlign("center")
+    :setBackground(colors.blue)
+    :setForeground(colors.white)
+    :setPosition(33, 1)
+    :setSize(3,1)
+    :onClick(
+        function()
+        appmgr:setSize(50, 25)
+        end)
+
+local exit = appmgr:addButton() -- Min button
+    :setText("-")
+    :setHorizontalAlign("center")
+    :setBackground(colors.yellow)
+    :setForeground(colors.white)
+    :setPosition(29, 1)
+    :setSize(3,1)
+    :onClick(
+        function()
+        appmgr:setSize(50, 2)
+        end)
 
 
 local aButton = appmgr:addButton() -- More buttons even for test
@@ -78,13 +110,78 @@ local wormthing = appmgr:addButton() --entry for the snake rip off, worm
 	:setForeground(colors.green)
 	 :onClick(
         function()
-         local wormwindow = main:addMovableFrame()
+         local wormwindow = main:addMovableFrame():setSize(40, 16)
 	 :setBorder(colors.red)
 	 :setSize(40,16)
 	 :setPosition(1, 1)
-	 local wormsession = wormwindow:addProgram()
-	 :setSize(40, 16)
+	local titlebar = wormwindow:addPane() -- The bar to hold the text and buttons
+	:setSize(50, 1)
+	:setBackground(colors.black)
+local titletext = wormwindow:addLabel()
+	:setText("Worm")
+	:setFontSize(1)
+	:setForeground(colors.white)
+	local wormsession = wormwindow:addProgram()
+	 :setBorder(colors.red)
 	 :execute("worm")
+	 :setSize(40, 16)
+
+local exit = wormwindow:addButton() -- Exit button
+    :setText("X")
+    :setHorizontalAlign("center")
+    :setBackground(colors.red)
+    :setForeground(colors.white)
+    :setPosition(37, 1)
+    :setSize(3,1)
+    :onClick(
+        function()
+        basalt.removeFrame(wormwindow:getName())
+        end)
+	
+local exit = wormwindow:addButton() -- Full Screen button
+    :setText("[]")
+    :setHorizontalAlign("center")
+    :setBackground(colors.blue)
+    :setForeground(colors.white)
+    :setPosition(33, 1)
+    :setSize(3,1)
+    :onClick(
+        function()
+        wormwindow:setSize(50, 25)
+        end)
+
+local exit = wormwindow:addButton() -- Min button
+    :setText("-")
+    :setHorizontalAlign("center")
+    :setBackground(colors.yellow)
+    :setForeground(colors.white)
+    :setPosition(29, 1)
+    :setSize(3,1)
+    :onClick(
+        function()
+        wormwindow:setSize(50, 2)
+        end)
+
+
+
+	
+local sysmgr = appmgr:addButton() --entry for the system manager
+	:setHorizontalAlign("center")
+	:setVerticalAlign("center")
+	:setPosition(20, 4)
+	:setSize(3,2)
+	:setText("%")
+	:setBackground(colors.blue)
+	:setForeground(colors.yellow)
+	 :onClick(
+        function()
+         local sysmgrwindow = main:addMovableFrame():setSize(40, 16)
+	 :setSize(40,16)
+	 :setPosition(1, 1)
+	 local sysmgrsession = sysmgrwindow:addProgram()
+	 :execute("/sys/apps/sysmgr.lua")
+	 :setSize(40, 16)
+        end)
 
 local aButton = appmgr:addButton() -- More buttons even for test
     :setText("Reboot")
@@ -95,5 +192,4 @@ local aButton = appmgr:addButton() -- More buttons even for test
         function()
          shell.run("reboot")
         end)
-	
-basalt.autoUpdate()
+basalt.autoUpdate() -- self explanitary if not read the docs
