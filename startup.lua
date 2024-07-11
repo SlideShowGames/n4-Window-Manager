@@ -114,7 +114,7 @@ local wormthing = appmgr:addButton() --entry for the snake rip off, worm
 	 :setBorder(colors.red)
 	 :setSize(40,16)
 	 :setPosition(1, 1)
-	 	 local titlebar = wormwindow:addPane() -- The bar to hold the text and buttons
+	local titlebar = wormwindow:addPane() -- The bar to hold the text and buttons
 	:setSize(50, 1)
 	:setBackground(colors.black)
 local titletext = wormwindow:addLabel()
@@ -182,71 +182,6 @@ local sysmgr = appmgr:addButton() --entry for the system manager
 	 :execute("/sys/apps/sysmgr.lua")
 	 :setSize(40, 16)
         end)
-
-local test = appmgr:addButton() --entry for the testing window
-	:setHorizontalAlign("center")
-	:setVerticalAlign("center")
-	:setPosition(25, 4)
-	:setSize(3,2)
-	:setText("T")
-	:setBackground(colors.gray)
-	:setForeground(colors.red)
-	 :onClick(
-        function()
-         local testwindow = main:addMovableFrame():setSize(40, 16)
-	 :setSize(40,16)
-	 :setPosition(1, 1)
-	 
-	 local titlebar = testwindow:addPane() -- The bar to hold the text and buttons
-	:setSize(50, 1)
-	:setBackground(colors.black)
-local titletext = testwindow:addLabel()
-	:setText("Hello, World!")
-	:setFontSize(1)
-	:setForeground(colors.white)
-	
-
-local exit = testwindow:addButton() -- Exit button
-    :setText("X")
-    :setHorizontalAlign("center")
-    :setBackground(colors.red)
-    :setForeground(colors.white)
-    :setPosition(37, 1)
-    :setSize(3,1)
-    :onClick(
-        function()
-        basalt.removeFrame(testwindow:getName())
-        end)
-	
-local exit = testwindow:addButton() -- Full Screen button
-    :setText("[]")
-    :setHorizontalAlign("center")
-    :setBackground(colors.blue)
-    :setForeground(colors.white)
-    :setPosition(33, 1)
-    :setSize(3,1)
-    :onClick(
-        function()
-        testwindow:setSize(50, 50)
-        end)
-
-local exit = testwindow:addButton() -- Min button
-    :setText("-")
-    :setHorizontalAlign("center")
-    :setBackground(colors.yellow)
-    :setForeground(colors.white)
-    :setPosition(29, 1)
-    :setSize(3,1)
-    :onClick(
-        function()
-        testwindow:setSize(50, 2)
-        end)
-
-	 local tests = testwindow:addProgram()
-	 :execute("/sys/apps/test.lua")
-	 :setSize(40, 16)
-        end)
-
 
 local aButton = appmgr:addButton() -- More buttons even for test
     :setText("Reboot")
