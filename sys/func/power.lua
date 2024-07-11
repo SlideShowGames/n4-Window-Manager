@@ -1,0 +1,38 @@
+local basalt = require("/apis/basalt")
+print("basalt needs to be installed") -- lazy way of telling the user that the ui isnt installed.
+local main = basalt.createFrame() 
+:setBackground(colors.white)
+:setForeground(colors.black)
+local shutdownd = main:addButton()
+	:setText("Shutdown")
+	:setPosition(5, 2)
+	:setSize(15,2)
+	:setBackground(colors.red)
+	:setForeground(colors.white)
+	:onClick(
+	function()
+         shell.run("shutdown")
+        end)
+local rebootd = main:addButton()
+	:setText("Reboot")
+	:setPosition(5, 6)
+	:setSize(15,2)
+	:setBackground(colors.red)
+	:setForeground(colors.white)
+	:onClick(
+	function()
+         shell.run("reboot")
+        end)
+local dosmode = main:addButton()
+	:setText("Shell")
+	:setPosition(5, 10)
+	:setSize(15,2)
+	:setBackground(colors.red)
+	:setForeground(colors.white)
+	:onClick(
+	function()
+	 basalt.stopUpdate()
+         shell.run("shell")
+        end)
+	
+basalt.autoUpdate() -- self explanitary if not read the docs

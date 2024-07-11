@@ -4,7 +4,7 @@ local speakers = { peripheral.find("speaker") } -- this way i can utilyze ALL sp
  
 -- Initial Boot Setup Script
 local basaltExists = fs.exists("basalt.lua")
-local musicDir = "/sys/users/root/music/"
+local musicDir = "/disk/music/"
 local configFilePath = "/config.txt"
 local defaultConfig = {
     chunkSize = 1024*6, -- Default chunk size
@@ -118,7 +118,7 @@ local spacing = (screenWidth - (buttonWidth * 3)) / 4
 local startY = screenHeight - buttonHeight - 1 -- Y position for buttons
 local returnToMenu = false
 -- Define rootFolder where your music files are located
-local rootFolder = "/sys/users/root/music/"
+local rootFolder = "/disk/music/"
 local shuffleEnabled = false
 -- Function to read the contents of a folder and return the filenames as a table
 function readFolderContents(folderPath)
