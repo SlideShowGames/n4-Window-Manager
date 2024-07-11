@@ -20,9 +20,10 @@ shell.run("cd /sys/users/root/")
 shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/sys/users/root/image.nfp")
 shell.run("mkdir music/")
 shell.run("cd /disk/")
-shell.run("cp guh.dfpwm")
+shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/sys/users/root/music/guh.dfpwm")
+shell.run("cd /")
 print("done now rebooting")
-reboot()
+shell.run("reboot")
 
 
 
