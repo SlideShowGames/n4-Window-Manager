@@ -17,11 +17,10 @@ shell.run("wget https://raw.githubusercontent.com/SlideShowGames/n4-Window-Manag
 shell.run("https://raw.githubusercontent.com/SlideShowGames/n4-Window-Manager/main/sys/apps/sysmgr.lua")
 shell.run("https://raw.githubusercontent.com/SlideShowGames/n4-Window-Manager/main/sys/apps/musicplayer.lua")
 shell.run("cd /sys/users/root/")
-shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/sys/users/root/music/guh.dfpwm")
 shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/sys/users/root/image.nfp")
 shell.run("mkdir music/")
-shell.run("cp guh.dfpwm music/guh.dfpwm")
-shell.run("rm guh.dfpwm")
+shell.run("cd /disk/")
+shell.run("cp guh.dfpwm")
 print("done now rebooting")
 reboot()
 
