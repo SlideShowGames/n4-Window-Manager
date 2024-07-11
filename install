@@ -31,7 +31,7 @@ print("Now Downloading and Installing the Wallpapers:")
 shell.run("cd /")
 shell.run("mkdir wallpapers")
 shell.run("cd wallpapers")
-shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/wallpapers/low-sierra.bimg"
+shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/wallpapers/low-sierra.bimg")
 shell.run("wget https://github.com/SlideShowGames/n4-Window-Manager/raw/main/wallpapers/high-sierra.bimg")
 shell.run("cd /")
 print("done now rebooting")
